@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoBank - Sanal Bankacılık Simülatörü</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Üst Menü -->
+    <header class="navbar">
+        <div class="logo">NeoBank <span>Demo</span></div>
+        <div class="user-info">
+            <span id="username-display">Hoş geldiniz, Ahmet Yılmaz</span>
+            <button id="logout-btn">Çıkış Yap</button>
+        </div>
+    </header>
+
+    <!-- Ana Konteyner -->
+    <div class="container">
+        
+        <!-- Sol Kart: Bakiye Bilgisi -->
+        <div class="card balance-card">
+            <h3>Toplam Bakiye</h3>
+            <div class="balance" id="balance-amount">15,450.00 ₺</div>
+            <p class="account-number">IBAN: TR99 0000 1111 2222 3333 4444 55</p>
+        </div>
+
+        <!-- Sağ Kart: Para Transferi Formu -->
+        <div class="card transfer-card">
+            <h3>Para Transferi Yap (Simülasyon)</h3>
+            <form id="transfer-form">
+                <div class="form-group">
+                    <label for="iban">Alıcı IBAN</label>
+                    <input type="text" id="iban" placeholder="TR00 0000..." required>
+                </div>
+                <div class="form-group">
+                    <label for="receiver">Alıcı Adı</label>
+                    <input type="text" id="receiver" placeholder="Ad Soyad" required>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Miktar (₺)</label>
+                    <input type="number" id="amount" min="1" placeholder="0.00" required>
+                </div>
+                <button type="submit" class="btn-submit">Gönder</button>
+            </form>
+            <div id="message" class="message"></div>
+        </div>
+
+        <!-- Hesap Hareketleri -->
+        <div class="card history-card">
+            <h3>Son İşlemler</h3>
+            <ul id="transaction-list" class="transaction-list">
+                <li class="transaction-item income">
+                    <span>Maaş Ödemesi</span>
+                    <span class="amount">+25,000.00 ₺</span>
+                </li>
+                <li class="transaction-item expense">
+                    <span>Market Alışverişi</span>
+                    <span class="amount">-1,550.00 ₺</span>
+                </li>
+                <li class="transaction-item expense">
+                    <span>Elektrik Faturası</span>
+                    <span class="amount">-800.00 ₺</span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
